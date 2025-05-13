@@ -24,3 +24,8 @@ resource "hcloud_server" "server" {
   location    = var.server_location
   ssh_keys    = [var.ssh_key_name]
 }
+
+output "server_ips" {
+  description = "Created server IP addresses."
+  value       = [for server in hcloud_server.server : server.ipv4_address]
+}
