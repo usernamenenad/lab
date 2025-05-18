@@ -5,6 +5,7 @@ metadata:
   namespace: apps
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: "/"
+    nginx.ingress.kubernetes.io/add-base-url: "true"
 spec:
   rules:
     - http:
