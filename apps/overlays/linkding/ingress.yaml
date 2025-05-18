@@ -4,13 +4,14 @@ metadata:
   name: app-ingress
   namespace: apps
   annotations:
-    nginx.ingress.kubernetes.io/app-root: "/linkding"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
     - http:
         paths:
           - pathType: Prefix
-            path: "/"
+            path: /linkding/(.*)
             backend:
               service:
                 name: app-service-linkding
