@@ -7,7 +7,8 @@ spec:
   rules:
     - http:
         paths:
-          - path: "/linkding"
+          - pathType: Prefix
+            path: "linkding"
             backend:
               service:
                 name: app-service-linkding
