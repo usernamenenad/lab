@@ -3,12 +3,14 @@ kind: Ingress
 metadata:
   name: app-ingress
   namespace: apps
+  annotations:
+    nginx.ingress.kubernetes.io/app-root: "/linkding"
 spec:
   rules:
     - http:
         paths:
           - pathType: Prefix
-            path: "/linkding"
+            path: "/"
             backend:
               service:
                 name: app-service-linkding
