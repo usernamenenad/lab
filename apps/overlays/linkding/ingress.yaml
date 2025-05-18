@@ -10,7 +10,7 @@ spec:
     - http:
         paths:
           - path: /linkding(/|$)(.*)
-            pathType: ImplementationSpecific
+            pathType: Prefix
             backend:
               service:
                 name: app-service-linkding
