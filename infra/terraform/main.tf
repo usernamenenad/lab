@@ -25,7 +25,17 @@ resource "hcloud_server" "server" {
   ssh_keys    = [var.ssh_key_name]
 }
 
-output "server_ips" {
-  description = "Created server IP addresses."
-  value       = [for server in hcloud_server.server : server.ipv4_address]
+output "ansible_inventory" {
+  value = {
+    all = {
+      hosts = {
+        for server in hcloud_server.server :
+        server.name => {
+          ansible_host             = server.ipv4_address
+          ansible_user             = "root"
+          ansible_private_key_file = "~/.ssh/hetzner.pub"
+        }
+      }
+    }
+  }
 }
