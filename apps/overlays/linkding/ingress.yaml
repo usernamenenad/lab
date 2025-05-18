@@ -4,8 +4,7 @@ metadata:
   name: app-ingress
   namespace: apps
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: "/$1"
-    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
 spec:
   rules:
     - http:
