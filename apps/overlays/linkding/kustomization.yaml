@@ -7,3 +7,4 @@ nameSuffix: -linkding
 
 patches:
   - path: ./deployment.yaml
+  - path: ./service.yaml
