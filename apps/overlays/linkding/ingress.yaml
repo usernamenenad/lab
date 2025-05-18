@@ -5,13 +5,13 @@ metadata:
   namespace: apps
 spec:
   rules:
-    - host: 78.46.148.118
-      http:
-        paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: app-service-linkding
-                port:
-                  number: 80
+    # - host: 78.46.148.118
+    http:
+      paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: app-service-linkding
+              port:
+                number: 80
