@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+  namespace: apps
+spec:
+  selector:
+    apps: linkding
+  ports:
+    - port: 80
+      targetPort: 9090
