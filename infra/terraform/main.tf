@@ -13,7 +13,7 @@ provider "hcloud" {
 
 resource "hcloud_ssh_key" "ssh-key" {
   name       = var.ssh_key_name
-  public_key = file("~/.ssh/hetzner.pub")
+  public_key = file("~/.ssh/id_rsa.pub")
 }
 
 resource "hcloud_server" "server" {
@@ -33,7 +33,7 @@ output "ansible_inventory" {
         server.name => {
           ansible_host             = server.ipv4_address
           ansible_user             = "root"
-          ansible_private_key_file = "~/.ssh/hetzner.pub"
+          ansible_private_key_file = "~/.ssh/id_rsa.pub"
         }
       }
     }

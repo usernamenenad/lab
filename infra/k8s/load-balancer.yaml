@@ -10,7 +10,7 @@ spec:
     app.kubernetes.io/name: ingress-nginx
   ports:
     - port: 80
-      targetPort: 443
+      targetPort: 80
       protocol: TCP
       name: http
   type: LoadBalancer
