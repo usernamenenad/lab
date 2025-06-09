@@ -1,3 +1,16 @@
 {
-    "ansible.python.interpreterPath": "/bin/python3"
+    "ansible.python.interpreterPath": "/bin/python3",
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "keep",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.quickSuggestions": {
+            "strings": true,
+            "other": true,
+            "comments": false
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    }
 }
